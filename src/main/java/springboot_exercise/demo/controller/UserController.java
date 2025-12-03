@@ -1,7 +1,7 @@
-package controller;
+package springboot_exercise.demo.controller;
 
-import entity.User;
-import service.UserService;
+import springboot_exercise.demo.entity.User;
+import springboot_exercise.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

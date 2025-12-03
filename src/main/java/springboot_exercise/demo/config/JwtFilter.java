@@ -1,6 +1,6 @@
-package config;
+package springboot_exercise.demo.config;
 
-import jwt.JwtProvider;
+import springboot_exercise.demo.jwt.JwtProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,23 +14,29 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Collections;
 
+
 @Component
 @RequiredArgsConstructor
 public class JwtFilter extends OncePerRequestFilter {
 
     private final JwtProvider jwtProvider;
 
+    // ★★ 특정 URL은 필터 제외 ★★
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        String path = request.getRequestURI();
+
+        return path.startsWith("/auth/login")
+                || path.startsWith("/auth/join")
+                || path.startsWith("/user/join")
+                || "OPTIONS".equalsIgnoreCase(request.getMethod()); // 프리플라이트 요청도 제외
+    }
+
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain)
             throws ServletException, IOException {
-
-        // ★★ CORS preflight(OPTIONS) 요청은 무조건 통과시켜야 함 ★★
-        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
-            filterChain.doFilter(request, response);
-            return;
-        }
 
         String bearer = request.getHeader("Authorization");
 

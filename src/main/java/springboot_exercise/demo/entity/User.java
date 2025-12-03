@@ -1,4 +1,4 @@
-package entity;
+package springboot_exercise.demo.entity;
 
 import lombok.Getter;
 import lombok.Setter;

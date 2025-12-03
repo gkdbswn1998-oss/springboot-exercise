@@ -1,4 +1,4 @@
-package config;
+package springboot_exercise.demo.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -34,7 +34,7 @@ public class SecurityConfig {
 
                         // 🔥 로그인 + 회원가입 API 허용
                         .requestMatchers("/auth/login", "/auth/join", "/user/join").permitAll()
-
+                        .requestMatchers("/mypage/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 // 🔥 JWT 필터 등록

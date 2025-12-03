@@ -1,4 +1,4 @@
-package dto;
+package springboot_exercise.demo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

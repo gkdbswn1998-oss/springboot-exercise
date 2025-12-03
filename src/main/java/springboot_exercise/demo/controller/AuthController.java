@@ -1,8 +1,8 @@
-package controller;
+package springboot_exercise.demo.controller;
 
-import dto.LoginRequest;
-import dto.TokenResponse;
-import service.AuthService;
+import springboot_exercise.demo.dto.LoginRequest;
+import springboot_exercise.demo.dto.TokenResponse;
+import springboot_exercise.demo.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

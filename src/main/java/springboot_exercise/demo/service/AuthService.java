@@ -1,8 +1,8 @@
-package service;
+package springboot_exercise.demo.service;
 
-import entity.User;
-import jwt.JwtProvider;
-import repository.UserRepository;
+import springboot_exercise.demo.entity.User;
+import springboot_exercise.demo.jwt.JwtProvider;
+import springboot_exercise.demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package repository;
+package springboot_exercise.demo.repository;
 
-import entity.User;
+import springboot_exercise.demo.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
