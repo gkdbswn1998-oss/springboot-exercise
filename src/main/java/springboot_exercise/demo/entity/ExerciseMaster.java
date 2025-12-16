@@ -18,7 +18,6 @@ public class ExerciseMaster {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String exerciseCode;
     private String exerciseName;
     private int defaultMinutes;
     private int isActive;

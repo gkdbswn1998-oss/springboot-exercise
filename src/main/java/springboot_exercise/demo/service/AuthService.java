@@ -1,7 +1,7 @@
 package springboot_exercise.demo.service;
 
 import springboot_exercise.demo.entity.User;
-import springboot_exercise.demo.jwt.JwtProvider;
+
 import springboot_exercise.demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     private final UserRepository userRepository;
-    private final JwtProvider jwtProvider;
+
 
     public String login(String email, String password) {
 
@@ -22,6 +22,6 @@ public class AuthService {
             throw new RuntimeException("비밀번호 불일치");
         }
 
-        return jwtProvider.createToken(email);
+        return email;
     }
 }
